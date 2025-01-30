@@ -18,7 +18,7 @@ class TestTextNode(unittest.TestCase):
         self.assertIsNone(node.url)
         
     def test_url(self):
-        node = TextNode("This is a text node", TextType.BOLD, "test")
+        node = TextNode("This is a text node2", TextType.BOLD, "test")
         self.assertIsNotNone(node.url)
         
     def test_texttype(self):
