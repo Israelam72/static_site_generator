@@ -11,7 +11,6 @@ class HTLMNode:
     def props_to_html(self):
         props_dict = self.props.copy()
         strg = "".join(list(map(lambda kv: f' {kv[0]}="{kv[1]}"', props_dict.items())))
-        print(strg)
         return strg
     
     def __repr__(self):
