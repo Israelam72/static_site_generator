@@ -1,5 +1,5 @@
 import unittest
-from htmlnode import HTLMNode
+from htmlnode import HTMLNode
 
 class TestHTMLNode(unittest.TestCase):
     test = {
@@ -10,15 +10,15 @@ class TestHTMLNode(unittest.TestCase):
     strg = ' href="https://www.google.com" target="_blank" target2="_blank2"'
 
     def test_nodesprops(self):
-        node = HTLMNode("<p>", "Israel", props=TestHTMLNode.test)
+        node = HTMLNode("<p>", "Israel", props=TestHTMLNode.test)
         self.assertEqual(node.props_to_html(), TestHTMLNode.strg)
 
     def test_emptyprops(self):
-        node = HTLMNode("<p>", "Israel", props={})
+        node = HTMLNode("<p>", "Israel", props={})
         self.assertEqual(node.props_to_html(), "")
 
     def test_notequal(self):
-        node = HTLMNode("<p>", "Israel", props=TestHTMLNode.test)
+        node = HTMLNode("<p>", "Israel", props=TestHTMLNode.test)
         self.assertNotEqual(node.tag, node.value)
 
 
