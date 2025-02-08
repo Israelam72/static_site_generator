@@ -38,8 +38,10 @@ class ParentNode(HTMLNode):
     def to_html(self):
         if not self.tag:
             raise ValueError("Must have a tag")
-        elif len(self.children) == 0:
+        elif not self.children:
             raise ValueError("Children argument must have a value")
+        elif not all(isinstance(child, HTMLNode)for child in self.children):
+            raise ValueError("All children must be instances of HTMLNode")
         
         children_html = "".join(child.to_html() for child in self.children)
         if self.props:
